@@ -1,0 +1,15 @@
+This is a combinatory logic system using the K and S combinators as a basis, in the form of a Racket DSL.
+
+Assuming the "sk.rkt" is in the same directory as your source file, you can use the DSL by using the following #lang directive:
+
+	#lang s-exp "sk.rkt"
+
+A legal expression in the DSL is of the form `(*t* ...)` where each *t* is either `K` or `S`. Evaluation is done by reducing the expression until it is reducible. The irreducible expression returned is encoded as a list of the form (*t* ...) where each *t* is either `'K` or `'S`.
+
+Examples:
+* `(S K K)` evaluates to `'((S K) K)`
+* `(K K S)` evaluates to `'K`
+* `(S K S (K S))` evaluates to `'((K (K S)) (S (K S)))`
+* `((S K K) (K S))` evaluates to `'(K S)`
+* `(S (S K K) (S K K) S)` evaluates to `'(S S)`
+* `(S (S K K) (S K K) (S (S K K) (S K K)))` is a non-terminating program
