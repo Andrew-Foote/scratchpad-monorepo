@@ -1,0 +1,1 @@
+An implementation of the lambda calculus, mainly intended as an exercise in using the Hypothesis property testing library.
