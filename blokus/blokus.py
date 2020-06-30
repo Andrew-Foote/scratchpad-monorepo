@@ -1,0 +1,1 @@
+# A Blokus game is a list of moves.
