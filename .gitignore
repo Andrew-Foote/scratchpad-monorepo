@@ -1,6 +1,7 @@
 compiled
 *.bak
 *.1
+env
 venv
 *.pyc
 __pycache__
